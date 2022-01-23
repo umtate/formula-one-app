@@ -1,0 +1,15 @@
+.flags {
+  margin: auto;
+  width: 64px;
+  height: 64px;
+}
+
+.circular-icon {
+  border: 3px solid;
+  border-radius: 60px;
+  overflow: hidden;
+  border-right-color: silver;
+  border-top-color: silver;
+  border-bottom-color: rgb(228, 203, 92);
+  border-left-color: rgb(228, 203, 92);
+}

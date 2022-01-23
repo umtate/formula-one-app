@@ -1,0 +1,101 @@
+.logo {
+  margin-left: 2%;
+}
+
+nav {
+  padding-left: 100px;
+  padding-right: 100px;
+  background-color: #424242;
+  height: 80px;
+}
+
+nav,
+nav ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+nav ul li {
+  font-size: 1.5rem;
+  //font-family: "Montserrat", sans-serif;
+  list-style-type: none;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+nav ul li a:hover {
+  color: rgb(219, 219, 219);
+}
+
+.toggle-switch {
+  opacity: 0;
+  position: absolute;
+}
+
+.toggle-switch-label {
+  width: 50px;
+  height: 26px;
+  @include theme() {
+    background-color: theme-get("bg-color");
+  }
+  display: flex;
+  border-radius: 50px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  position: relative;
+  transform: scale(1.5);
+}
+
+.toggle-switch-ball {
+  width: 20px;
+  height: 20px;
+  @include theme() {
+    background-color: theme-get("text-color");
+  }
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
+}
+
+/*  target the elemenent after the label*/
+.toggle-switch:checked + .toggle-switch-label .toggle-switch-ball {
+  transform: translateX(24px);
+}
+
+@media only screen and (max-width: 768px) {
+  nav {
+    padding: unset !important;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  nav,
+  nav ul {
+    height: auto;
+    display: flex;
+    flex-flow: column wrap;
+  }
+  nav ul li {
+    width: 100%;
+  }
+  nav ul li a {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50px;
+  }
+  nav ul li a:hover {
+    color: white;
+    background-color: rgb(71, 71, 71);
+  }
+}

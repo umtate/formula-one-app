@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap");
+
+// Set up or themes variables
+$themes: (
+  darkTheme: (
+    "text-color": white,
+    "bg-color": #283646,
+    "card-color": #5e5d5d,
+    "raw-highlight": #f5f5f5,
+    "raw-highlight-text": black,
+  ),
+  lightTheme: (
+    "text-color": black,
+    "bg-color": #f5f5f5,
+    "card-color": rgb(248, 248, 248),
+    "raw-highlight": #283646,
+    "raw-highlight-text": white,
+  ),
+);
+
+@mixin theme() {
+  @each $theme, $map in $themes {
+    $theme-map: $map !global;
+    .#{$theme} & {
+      @content;
+    }
+  }
+  $theme-map: null !global;
+}
+
+@function theme-get($key) {
+  @return map-get($theme-map, $key);
+}
+
+.content {
+  @include theme() {
+    color: theme-get("text-color");
+    background-color: theme-get("bg-color");
+  }
+  font-family: "Work Sans", sans-serif;
+  position: fixed;
+  width: 100%;
+  overflow-y: scroll;
+  height: 100vh;
+  padding-bottom: 4rem;
+}
+
+h1 {
+  position: relative;
+  padding: 2rem;
+  margin: auto;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
+  font-size: 40px;
+  @include theme() {
+    color: theme-get("text-color");
+  }
+  -webkit-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+}
+
+@import "nav";
+@import "card";
+@import "table";
+@import "loader";
+@import "flag";
