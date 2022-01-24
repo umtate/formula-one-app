@@ -5,7 +5,6 @@ import axios from "axios";
 import trophy from "../images/trophy-icon.png";
 import { Loader } from "../components/Loader";
 import { Heading } from "../components/Heading";
-import { Arrow } from "../components/Arrow";
 
 export const ListOfWinners = ({ baseUrl, champion }) => {
   const [winners, setWinners] = useState([]);
