@@ -62,6 +62,14 @@ h1 {
   transition: all 0.4s ease 0s;
 }
 
+.go-back a {
+  text-decoration: none;
+  margin-left: 25%;
+  @include theme() {
+    color: theme-get("text-color");
+  }
+}
+
 @import "nav";
 @import "card";
 @import "table";
