@@ -1,4 +1,4 @@
-# Project Name
+# Mobiqiuty F1 App
 
 > This is a f1 drivers standings application that list world champions from 2005 to 2021
 
