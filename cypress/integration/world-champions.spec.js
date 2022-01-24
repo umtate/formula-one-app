@@ -16,7 +16,7 @@ describe("f1 drivers world champions list", () => {
   // });
 
   it("should display cards with world champions content ", () => {
-    cy.get('*[class^="card-container"]').should("be.visible");
+    cy.get('*[class^="card-container"]').should("have.length.above", 1);
     cy.get('*[class^="card-text-header"]').should((text) => {
       expect(text.text().length).to.be.above(1);
     });
