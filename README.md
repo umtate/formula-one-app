@@ -42,7 +42,7 @@ To run application
 
 - npm start
 
-To run end to end tests
+To run end to end tests while application is running on port 3000
 
 - npm run e2e
 
