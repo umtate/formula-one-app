@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 import axios from "axios";
 import trophy from "../images/trophy-icon.png";
 import { Loader } from "../components/Loader";
 import { Heading } from "../components/Heading";
+import { Arrow } from "../components/Arrow";
 
 export const ListOfWinners = ({ baseUrl, champion }) => {
   const [winners, setWinners] = useState([]);
@@ -59,6 +60,10 @@ export const ListOfWinners = ({ baseUrl, champion }) => {
       ) : (
         <>
           <Heading heading={`${year.slice(1)} Driver Standings`} />
+          <span className="go-back">
+            {" "}
+            <Link to="/">Go back</Link>
+          </span>
           <table className="list-table">
             <thead>
               <tr>
