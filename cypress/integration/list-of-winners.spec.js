@@ -29,11 +29,6 @@ describe("list of f1 driver winners for a season", () => {
     });
   });
 
-  it("should be able to navigate back to champions page after clicking champions", () => {
-    cy.get("#champions-link").should("be.visible").click();
-    cy.url().should("not.include", "/winners");
-  });
-
   it("should display table of winners with at least one race", () => {
     cy.get("table").contains("th", "Winner");
     cy.get("table").get("tr").should("have.length.above", 1);
@@ -43,5 +38,10 @@ describe("list of f1 driver winners for a season", () => {
     cy.get("[id^=highlight-]")
       .should("have.attr", "src")
       .should("include", "trophy-icon");
+  });
+
+  it("should be able to navigate back to champions page after clicking champions", () => {
+    cy.get("#champions-link").should("be.visible").click();
+    cy.url().should("not.include", "/winners");
   });
 });
